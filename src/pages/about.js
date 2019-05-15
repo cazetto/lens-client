@@ -14,6 +14,11 @@ const About = ({ data }) => (
           __html: data.aboutJson.content.childMarkdownRemark.html,
         }}
       />
+      <div
+        dangerouslySetInnerHTML={{
+          __html: data.aboutJson.content.childMarkdownRemark.html,
+        }}
+      />
     </Box>
   </Layout>
 );

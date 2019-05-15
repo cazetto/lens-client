@@ -2,14 +2,17 @@ import styled from 'styled-components';
 
 export const Container = styled.header`
   .search-bar {
-    margin-top: 12%;
     text-align: center;
     width: 100%;
     transition: all 0.5s;
   }
 
   .search-bar.to-top-mode {
-    margin-top: 120px;
+    margin-top: 0px;
+  }
+
+  .search-bar.normal-mode {
+    margin-top: 6%;
   }
 
   .search-bar.to-top-mode > .form {
@@ -77,8 +80,8 @@ export const Container = styled.header`
     fill: #3a7bf0;
   }
   .icon-wrap {
-    margin-left: -42px;
-    margin-top: 6px;
+    margin-left: -46px;
+    margin-top: 4px;
     fill: #fff;
     background: 0;
     outline: 0;

@@ -1,18 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import SearchListItem from 'components/search-list-item';
+import Box from 'components/box';
 
 const SearchList = props => (
-  <ul>
-    {props.items.map((currentValue, index) => {
-      return (
-        <li key={index}>
-          <p>{currentValue.title}</p>
-          <p>{currentValue.description}</p>
-          <p>{currentValue.content}</p>
-        </li>
-      );
+  <Box>
+    {props.items.map((item, index) => {
+      return <SearchListItem data={item} key={index} />;
     })}
-  </ul>
+
+    {props.items.map((item, index) => {
+      return <SearchListItem data={item} key={index} />;
+    })}
+    {props.items.map((item, index) => {
+      return <SearchListItem data={item} key={index} />;
+    })}
+  </Box>
 );
 
 SearchList.propTypes = {

@@ -8,6 +8,8 @@ import { FEED_SEARCH_QUERY } from './queries';
 
 import { useQueryStringSearchKeyword } from 'containers/search/hooks';
 
+import Loading from 'components/loading';
+
 const SearchContainer = props => {
   const { keyword, setKeyword } = useQueryStringSearchKeyword(props);
 
@@ -26,7 +28,7 @@ const SearchContainer = props => {
       {keyword ? (
         <Query query={FEED_SEARCH_QUERY} variables={{ filter: keyword }}>
           {({ loading, error, data }) => {
-            if (loading) return <div>Fetching</div>;
+            if (loading) return <Loading />
             if (error) return <div>Error</div>;
             const items = data.feed.links;
             return (
