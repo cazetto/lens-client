@@ -1,19 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Location, navigate } from '@reach/router';
 import { Query } from 'react-apollo';
-import queryString from 'query-string';
 import SearchBar from 'components/search-bar';
 import SearchList from 'components/search-list';
 import { FEED_SEARCH_QUERY } from './queries';
 
-const SearchContainer = props => {
-  const { q } = queryString.parse(props.location.search) || '';
-  const [searchKeyword, setSearchKeyword] = useState(q);
+import { useQueryStringSearchKeyword } from 'containers/search/hooks';
 
-  const handleSearchSubmit = value => {
-    navigate(`/?q=${value}`);
-    setSearchKeyword(value);
+const SearchContainer = props => {
+  const { searchKeyword, setSearchKeyword } = useQueryStringSearchKeyword(
+    props
+  );
+
+  const handleSearchSubmit = keyword => {
+    navigate(`/?q=${keyword}`);
+    setSearchKeyword(keyword);
   };
 
   return (
