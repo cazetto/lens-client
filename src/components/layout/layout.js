@@ -3,15 +3,16 @@ import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import Head from 'components/head';
 import Header from 'components/header';
+import { ApolloProviderWrapper } from 'components/apollo';
 import GlobalStyle from 'global.css.js';
 
 const Layout = ({ data, children }) => (
-  <div>
+  <ApolloProviderWrapper>
     <GlobalStyle />
     <Head />
     <Header title={data.site.siteMetadata.siteTitle} />
     {children}
-  </div>
+  </ApolloProviderWrapper>
 );
 
 Layout.propTypes = {
