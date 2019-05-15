@@ -1,17 +1,17 @@
 import { useContext, useEffect } from 'react';
-import { StoreContext } from 'context/storeContext';
+import { StoreContext } from 'store';
 
 import queryString from 'query-string';
 
 export const useQueryStringSearchKeyword = props => {
   const { state, actions } = useContext(StoreContext);
-  const { searchKeyword } = state;
-  const { setSearchKeyword } = actions;
+  const { keyword } = state.search;
+  const { setKeyword } = actions;
 
   useEffect(() => {
     const { q } = queryString.parse(props.location.search) || '';
-    setSearchKeyword(q);
+    setKeyword(q);
   }, []);
 
-  return { searchKeyword, setSearchKeyword };
+  return { keyword, setKeyword };
 };

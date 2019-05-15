@@ -1,8 +1,9 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { ServerStyleSheet } from 'styled-components';
-import AppProvider from 'store/provider';
 import wrapPageElementWithTransition from 'helpers/wrapPageElement';
+import { ApolloProviderWrapper } from 'components/apollo';
+import { StoreProvider } from 'store';
 
 export const replaceRenderer = ({
   bodyComponent,
@@ -10,7 +11,13 @@ export const replaceRenderer = ({
   setHeadComponents,
 }) => {
   // React Context in SSR/build
-  const ConnectedBody = () => <AppProvider>{bodyComponent}</AppProvider>;
+  const ConnectedBody = () => (
+    <StoreProvider>
+      <ApolloProviderWrapper>
+        {bodyComponent}
+      </ApolloProviderWrapper>
+    </StoreProvider>
+  );
   replaceBodyHTMLString(renderToString(<ConnectedBody />));
 
   // Add styled-components in SSR/build

@@ -9,13 +9,11 @@ import { FEED_SEARCH_QUERY } from './queries';
 import { useQueryStringSearchKeyword } from 'containers/search/hooks';
 
 const SearchContainer = props => {
-  const { searchKeyword, setSearchKeyword } = useQueryStringSearchKeyword(
-    props
-  );
+  const { keyword, setKeyword } = useQueryStringSearchKeyword(props);
 
   const handleSearchSubmit = keyword => {
     navigate(`/?q=${keyword}`);
-    setSearchKeyword(keyword);
+    setKeyword(keyword);
   };
 
   return (
@@ -23,10 +21,10 @@ const SearchContainer = props => {
       <SearchBar
         location={props.location}
         handleSubmit={handleSearchSubmit}
-        value={searchKeyword}
+        value={keyword}
       />
-      {searchKeyword ? (
-        <Query query={FEED_SEARCH_QUERY} variables={{ filter: searchKeyword }}>
+      {keyword ? (
+        <Query query={FEED_SEARCH_QUERY} variables={{ filter: keyword }}>
           {({ loading, error, data }) => {
             if (loading) return <div>Fetching</div>;
             if (error) return <div>Error</div>;
