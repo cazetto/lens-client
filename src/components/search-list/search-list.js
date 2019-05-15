@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const List = props => {
-  function renderItems(items) {
-    return items.map((currentValue, index) => {
+const SearchList = props => (
+  <ul>
+    {props.items.map((currentValue, index) => {
       return (
         <li key={index}>
           <p>{currentValue.title}</p>
@@ -11,14 +11,12 @@ const List = props => {
           <p>{currentValue.content}</p>
         </li>
       );
-    });
-  }
+    })}
+  </ul>
+);
 
-  return <ul>{renderItems(props.items)}</ul>;
-};
-
-List.propTypes = {
+SearchList.propTypes = {
   items: PropTypes.array.isRequired,
 };
 
-export default List;
+export default SearchList;

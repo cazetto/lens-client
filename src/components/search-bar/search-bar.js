@@ -4,7 +4,7 @@ import posed from 'react-pose';
 
 import queryString from 'query-string';
 
-import { Container } from './search.css';
+import { Container } from './search-bar.css';
 
 const NORMAL_MODE = 'SearchBar/NORMAL_MODE';
 const TO_TOP_MODE = 'SearchBar/TO_TOP_MODE';
@@ -24,7 +24,7 @@ const AnimatedContainer = posed.div({
   },
 });
 
-const Search = props => {
+const SearchBar = props => {
   const { q } = queryString.parse(props.location.search) || '';
   const [keyword, setKeyword] = useState(props.value || '');
   const [mode, setMode] = useState(q ? TO_TOP_MODE : NORMAL_MODE);
@@ -51,7 +51,7 @@ const Search = props => {
     <AnimatedContainer>
       <Container>
         <div
-          className={`searchbar ${
+          className={`search-bar ${
             mode === TO_TOP_MODE ? 'to-top-mode' : 'normal-mode'
           }`}
         >
@@ -83,10 +83,10 @@ const Search = props => {
   );
 };
 
-Search.propTypes = {
+SearchBar.propTypes = {
   location: PropTypes.object.isRequired,
   value: PropTypes.string,
   handleSubmit: PropTypes.func.isRequired,
 };
 
-export default Search;
+export default SearchBar;

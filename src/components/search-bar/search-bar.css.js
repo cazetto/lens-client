@@ -1,22 +1,22 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
-  .searchbar {
+  .search-bar {
     margin-top: 12%;
     text-align: center;
     width: 100%;
     transition: all 0.5s;
   }
 
-  .searchbar.to-top-mode {
+  .search-bar.to-top-mode {
     margin-top: 120px;
   }
 
-  .searchbar.to-top-mode > .form {
+  .search-bar.to-top-mode > .form {
     padding: 0px 40px;
   }
 
-  .searchbar.to-top-mode > .form > .input {
+  .search-bar.to-top-mode > .form > .input {
     width: 100%;
     background: #eeeeee;
     color: #3a7bf0;
@@ -73,7 +73,7 @@ export const Container = styled.header`
   input::placeholder {
     color: #fff;
   }
-  .searchbar.to-top-mode > .form > .icon-wrap {
+  .search-bar.to-top-mode > .form > .icon-wrap {
     fill: #3a7bf0;
   }
   .icon-wrap {
