@@ -1,12 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Container } from './loading.css';
-import { ProgressCircular } from 'react-onsenui';
 
-const Loading = ({ children }) => (
-  <Container>
-    <ProgressCircular indeterminate />
-  </Container>
-);
+const Loading = () => <Container>Progress Circular</Container>;
 
 export default Loading;

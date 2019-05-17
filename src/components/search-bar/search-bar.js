@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import posed from 'react-pose';
 
 import queryString from 'query-string';
 
@@ -8,21 +7,6 @@ import { Container } from './search-bar.css';
 
 const NORMAL_MODE = 'SearchBar/NORMAL_MODE';
 const TO_TOP_MODE = 'SearchBar/TO_TOP_MODE';
-
-const AnimatedContainer = posed.div({
-  enter: {
-    y: '-200%',
-    transition: {
-      ease: 'easeInOut',
-    },
-  },
-  exit: {
-    y: 0,
-    transition: {
-      ease: 'easeInOut',
-    },
-  },
-});
 
 const SearchBar = props => {
   const { q } = queryString.parse(props.location.search) || '';

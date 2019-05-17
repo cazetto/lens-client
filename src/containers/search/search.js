@@ -28,7 +28,7 @@ const SearchContainer = props => {
       {keyword ? (
         <Query query={FEED_SEARCH_QUERY} variables={{ filter: keyword }}>
           {({ loading, error, data }) => {
-            if (loading) return <Loading />
+            if (loading) return <Loading />;
             if (error) return <div>Error</div>;
             const items = data.feed.links;
             return (

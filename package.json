@@ -19,6 +19,7 @@
     ]
   },
   "dependencies": {
+    "@kiwicom/orbit-components": "^0.41.0",
     "@reach/dialog": "^0.2.0",
     "@reach/router": "^1.2.1",
     "@reach/visually-hidden": "^0.1.1",
@@ -42,14 +43,12 @@
     "graphql-tag": "^2.10.1",
     "intersection-observer": "^0.5.1",
     "node-fetch": "^2.5.0",
-    "onsenui": "^2.10.8",
     "prop-types": "^15.6.2",
     "query-string": "^6.5.0",
     "react": "^16.8.6",
     "react-apollo": "^2.5.5",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
-    "react-onsenui": "^1.11.2",
     "react-pose": "^4.0.5",
     "styled-components": "^4.1.3"
   },
