@@ -22,7 +22,7 @@ export const Container = styled.header`
   .search-bar.to-top-mode > .form > .input {
     width: 100%;
     background: #eeeeee;
-    color: #3a7bf0;
+    color: #f50057;
     text-align: left;
   }
 
@@ -77,7 +77,7 @@ export const Container = styled.header`
     color: #fff;
   }
   .search-bar.to-top-mode > .form > .icon-wrap {
-    fill: #3a7bf0;
+    fill: #f50057;
   }
   .icon-wrap {
     margin-left: -46px;

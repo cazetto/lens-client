@@ -58,4 +58,3 @@ const SearchContainerWithLocation = () => {
 };
 
 export default SearchContainerWithLocation;
-export { FEED_SEARCH_QUERY };

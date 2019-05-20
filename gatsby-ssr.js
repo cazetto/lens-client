@@ -10,7 +10,7 @@ export const replaceRenderer = ({
   replaceBodyHTMLString,
   setHeadComponents,
 }) => {
-  // React Context in SSR/build
+  // React Context and apollo client in SSR/build
   const ConnectedBody = () => (
     <StoreProvider>
       <ApolloProviderWrapper>
