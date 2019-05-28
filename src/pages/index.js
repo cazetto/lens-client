@@ -1,8 +1,11 @@
 import React from 'react';
-import App from './app';
+import Layout from 'components/layout';
+import Search from 'containers/search';
 
 const Index = () => (
-  <App />
+  <Layout>
+    <Search />
+  </Layout>
 );
 
 export default Index;

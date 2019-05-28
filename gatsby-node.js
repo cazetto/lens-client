@@ -1,6 +1,5 @@
 const path = require('path');
 const DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin');
-const refraction = path.resolve('src/containers/refraction/refraction.js');
 
 exports.onCreateWebpackConfig = ({
   stage,
@@ -21,9 +20,10 @@ exports.onCreateWebpackConfig = ({
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
+  const post = path.resolve('src/containers/post/post.js');
 
   createPage({
-    path: '/ref/:id',
-    component: refraction,
-  })
+    path: '/post/:id',
+    component: post,
+  });
 }

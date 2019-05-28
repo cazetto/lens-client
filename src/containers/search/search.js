@@ -30,7 +30,7 @@ const SearchContainer = props => {
           {({ loading, error, data }) => {
             if (loading) return <Loading />;
             if (error) return <div>Error</div>;
-            const items = data.feed.links;
+            const items = data.feed.posts;
             return (
               <div>
                 <SearchList items={items} />
