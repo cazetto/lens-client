@@ -6,8 +6,8 @@ export const StyledButton = styled.button`
   outline: 0;
   border: none;
   border-radius: 2em;
-  color: #37474F;
-  border: 1px solid #ECEFF1;
+  color: #37474f;
+  border: 1px solid #eceff1;
   cursor: pointer;
   font-family: inherit;
   font-size: 1.3rem;
@@ -24,7 +24,7 @@ export const StyledButton = styled.button`
   }
 
   &:hover {
-    background-color: #ECEFF1;
+    background-color: #eceff1;
   }
 
   & + & {

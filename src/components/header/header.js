@@ -5,6 +5,9 @@ import posed from 'react-pose';
 import { Container } from './header.css';
 import Title from 'components/title';
 import Nav from 'components/header/nav';
+import { getToken } from 'helpers/authManager';
+
+import Me from 'containers/me';
 
 // Example of a component-specific page transition
 const AnimatedContainer = posed.div({
@@ -22,16 +25,21 @@ const AnimatedContainer = posed.div({
   },
 });
 
-const Header = ({ title }) => (
-  <AnimatedContainer>
-    <Container>
-      <Link to="/">
-        <Title as="h1">{title}</Title>
-      </Link>
-      <Nav />
-    </Container>
-  </AnimatedContainer>
-);
+const Header = ({ title }) => {
+  const token = getToken();
+  const isAuthenticated = Boolean(token);
+
+  return (
+    <AnimatedContainer>
+      <Container>
+        <Link to="/">
+          <Title as="h1">{title}</Title>
+        </Link>
+        <Me>{me => <Nav authenticated={isAuthenticated} me={me} />}</Me>
+      </Container>
+    </AnimatedContainer>
+  );
+};
 
 Header.propTypes = {
   title: PropTypes.string.isRequired,
