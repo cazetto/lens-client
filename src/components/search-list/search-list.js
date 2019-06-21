@@ -8,13 +8,6 @@ const SearchList = props => (
     {props.items.map((item, index) => {
       return <SearchListItem data={item} key={index} />;
     })}
-
-    {props.items.map((item, index) => {
-      return <SearchListItem data={item} key={index} />;
-    })}
-    {props.items.map((item, index) => {
-      return <SearchListItem data={item} key={index} />;
-    })}
   </Box>
 );
 

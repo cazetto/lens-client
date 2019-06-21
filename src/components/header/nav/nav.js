@@ -1,18 +1,26 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { Container } from './nav.css';
 
-const Nav = () => (
+const Nav = props => (
   <Container>
     <ul>
       <li>
-        <Link to="/about">About</Link>
+        {!props.authenticated ? (
+          <Link to="/login">Login</Link>
+        ) : (
+          <Link to="/logout">Logout</Link>
+        )}
       </li>
-      <li>
-        <a href="https://github.com/fabe/gatsby-universal">GitHub</a>
-      </li>
+      {props.authenticated && props.me && <li>{`Hello, ${props.me.name}`}</li>}
     </ul>
   </Container>
 );
+
+Nav.propTypes = {
+  authenticated: PropTypes.bool.isRequired,
+  me: PropTypes.object.isRequired,
+};
 
 export default Nav;
