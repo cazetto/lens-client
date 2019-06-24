@@ -20,7 +20,7 @@ const Nav = props => (
 
 Nav.propTypes = {
   authenticated: PropTypes.bool.isRequired,
-  me: PropTypes.object.isRequired,
+  me: PropTypes.object,
 };
 
 export default Nav;
