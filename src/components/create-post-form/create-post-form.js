@@ -4,6 +4,8 @@ import { Link } from 'gatsby';
 import { Box, Text } from 'rebass';
 import Input from 'components/form/input';
 import Button from 'components/button';
+import Editor from 'components/editor';
+import 'draft-js/dist/Draft.css';
 
 const CreatePostForm = ({ onChange, onSubmit, loading, error }) => {
   const [ [title, setTitle],
@@ -24,9 +26,6 @@ const CreatePostForm = ({ onChange, onSubmit, loading, error }) => {
 
   return (
     <Box>
-      <Text as="h1" fontSize={5} lineHeight={4}>
-        Login Form
-      </Text>
       <form>
         <Input
           type="text"
@@ -42,12 +41,8 @@ const CreatePostForm = ({ onChange, onSubmit, loading, error }) => {
           value={description}
           onChange={event => changeField(event.target.value, setDescription)}
         />
-        <Input
-          type="text"
-          placeholder="Content"
-          required={true}
-          value={content}
-          onChange={event => changeField(event.target.value, setContent)}
+        <Editor
+          onChange={content => changeField(content, setContent)}
         />
         <Input
           type="text"

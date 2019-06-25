@@ -20,6 +20,7 @@ const Head = ({
   <Helmet>
     <html lang="en" />
 
+    <meta charset="utf-8" />
     <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
     <meta
       content="width=device-width,initial-scale=1.0,user-scalable=yes"
