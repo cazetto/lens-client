@@ -29,17 +29,17 @@ const Nav = props => (
   </Container>
 );
 
-Nav.propTypes = {
-  authenticated: PropTypes.bool.isRequired,
-  me: PropTypes.object.isRequired,
-};
-
-const NavWithLocation = () => {
+const NavWithLocation = ({authenticated, me}) => {
   return (
     <Location>
-      {({ location }) => <Nav location={location} />}
+      {({ location }) => <Nav location={location} authenticated={authenticated} me={me}/>}
     </Location>
   );
+};
+
+NavWithLocation.propTypes = {
+  authenticated: PropTypes.bool.isRequired,
+  me: PropTypes.object.isRequired,
 };
 
 export default NavWithLocation;
