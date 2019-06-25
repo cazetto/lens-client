@@ -37,12 +37,6 @@ const PostCreate = () => {
   return (
     <Layout>
       <Box px={2}>
-        <Text as="span" fontSize={8}>Create</Text>
-        <Text as="span" fontSize={4}>New</Text>
-        <Text as="span" italic={true} fontWeight="bold" fontSize={0}>Post</Text>
-      </Box>
-      <Box px={2}>
-
         <Mutation
           mutation={POST_MUTATION}
           variables={{ title, description, content, slug, url }}

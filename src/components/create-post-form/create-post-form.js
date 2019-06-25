@@ -6,6 +6,7 @@ import Input from 'components/form/input';
 import Button from 'components/button';
 import Editor from 'components/editor';
 import 'draft-js/dist/Draft.css';
+import { StyledCreatePostForm } from './create-post-form.css'
 
 const CreatePostForm = ({ onChange, onSubmit, loading, error }) => {
   const [ [title, setTitle],
@@ -26,7 +27,7 @@ const CreatePostForm = ({ onChange, onSubmit, loading, error }) => {
 
   return (
     <Box>
-      <form>
+      <StyledCreatePostForm>
         <Input
           type="text"
           placeholder="Title"
@@ -44,31 +45,17 @@ const CreatePostForm = ({ onChange, onSubmit, loading, error }) => {
         <Editor
           onChange={content => changeField(content, setContent)}
         />
-        <Input
-          type="text"
-          placeholder="Slug"
-          required={true}
-          value={slug}
-          onChange={event => changeField(event.target.value, setSlug)}
-        />
-        <Input
-          type="text"
-          placeholder="URL"
-          required={true}
-          value={url}
-          onChange={event => changeField(event.target.value, setUrl)}
-        />
+        
         <Button type="submit" onClick={event => handleClick(event)}>
           Post
         </Button>
-        {loading && <div>Unn, let me check it...</div>}
+        {loading && <div>Please wait until I have saved your posting data</div>}
         {error && (
           <div>
-            Hey, are you sure? Check your email/password and try again. Or try
-            to <Link to="/forgot">recover you acount</Link>.
+            Error
           </div>
         )}
-      </form>
+      </StyledCreatePostForm>
     </Box>
   );
 };

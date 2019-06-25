@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Editor, EditorState, RichUtils, convertToRaw } from 'draft-js';
 import EditorFormater from 'components/editor-formatter';
+import { StyledEditor } from './editor.css';
 
 const CustomEditor = props => {
 
@@ -18,15 +19,15 @@ const CustomEditor = props => {
   const onBoldClick = () => onChange(RichUtils.toggleInlineStyle(editorState, 'BOLD'));
 
   return (
-    <div>
-      <button type="button" onClick={onUnderlineClick}>U</button>
-      <button type="button" onClick={onItalicClick}>I</button>
-      <button type="button" onClick={onBoldClick}>B</button>
-      <Editor
-        editorState={editorState}
-        onChange={onChange}
-      />
-    </div>
+    <StyledEditor>
+      <EditorFormater onUnderlineClick={onUnderlineClick} onItalicClick={onItalicClick} onBoldClick={onBoldClick} />
+      <div className="editor">
+        <Editor
+          editorState={editorState}
+          onChange={onChange}
+        />
+      </div>
+    </StyledEditor>
   );
 }
 
