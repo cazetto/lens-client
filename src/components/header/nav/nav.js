@@ -14,11 +14,13 @@ const Nav = props => (
         </li>
       ) : (
         <>
-          <li>
-            <Link to="/create/post">
-              <Button mt={-10} bg='#E91E63' variant='outline'>CREATE A POST</Button>
-            </Link>
-          </li>
+          {props.location.pathname !== '/create/post' && (
+            <li>
+              <Link to="/create/post">
+                <Button mt={-10} bg='#E91E63' variant='outline'>CREATE A POST</Button>
+              </Link>
+            </li>
+          )}
           <li>
             <Link to="/logout">Logout</Link>
           </li>
