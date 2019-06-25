@@ -1,6 +1,16 @@
 import styled from 'styled-components';
 
 export const Container = styled.nav`
+  button {
+    outline: none !important;
+    cursor: pointer;
+  }
+
+  .user {
+    cursor: default;
+    user-select: none;
+  }
+
   ul {
     display: flex;
     list-style: none;

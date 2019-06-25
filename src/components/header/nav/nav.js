@@ -22,7 +22,7 @@ const Nav = props => (
           <li>
             <Link to="/logout">Logout</Link>
           </li>
-          {props.me && <li>{`Hello, ${props.me.name}`}</li>}
+          {props.me && <li className="user">{`Hello, ${props.me.name}`}</li>}
         </>
       )}
     </ul>
@@ -39,7 +39,7 @@ const NavWithLocation = ({authenticated, me}) => {
 
 NavWithLocation.propTypes = {
   authenticated: PropTypes.bool.isRequired,
-  me: PropTypes.object.isRequired,
+  me: PropTypes.object,
 };
 
 export default NavWithLocation;
