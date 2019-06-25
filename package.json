@@ -45,6 +45,7 @@
     "gatsby-transformer-sharp": "^2.1.18",
     "graphql-tag": "^2.10.1",
     "intersection-observer": "^0.5.1",
+    "localstorage-ponyfill": "^1.0.2",
     "node-fetch": "^2.5.0",
     "prop-types": "^15.6.2",
     "query-string": "^6.5.0",
