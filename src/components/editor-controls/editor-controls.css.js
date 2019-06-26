@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledEditorFormater = styled.div`
+export const StyledEditorControls = styled.div`
   text-align: center;
   margin: 10px;
 

@@ -5,8 +5,7 @@ import { Box, Text } from 'rebass';
 import Input from 'components/form/input';
 import Button from 'components/button';
 import Editor from 'components/editor';
-import 'draft-js/dist/Draft.css';
-import { StyledCreatePostForm } from './create-post-form.css'
+import { StyledCreatePostForm } from './create-post-form.css';
 
 const CreatePostForm = ({ onChange, onSubmit, loading, error }) => {
   const [ [title, setTitle],
@@ -45,7 +44,7 @@ const CreatePostForm = ({ onChange, onSubmit, loading, error }) => {
         <Editor
           onChange={content => changeField(content, setContent)}
         />
-        
+
         <Button type="submit" onClick={event => handleClick(event)}>
           Post
         </Button>
