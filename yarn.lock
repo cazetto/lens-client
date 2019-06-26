@@ -4203,7 +4203,7 @@ decompress@^4.0.0, decompress@^4.2.0:
     pify "^2.3.0"
     strip-dirs "^2.0.0"
 
-decorate-component-with-props@^1.0.2:
+decorate-component-with-props@^1.0.2, decorate-component-with-props@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/decorate-component-with-props/-/decorate-component-with-props-1.1.0.tgz#b496c814c6a2aba0cf2ad26e44cbedb8ead42f15"
 
@@ -4518,9 +4518,32 @@ download@^7.1.0:
     p-event "^2.1.0"
     pify "^3.0.0"
 
+draft-js-checkable-list-item@^3.0.1:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/draft-js-checkable-list-item/-/draft-js-checkable-list-item-3.0.4.tgz#b3049a56499757720cdcbf3775d0384464ad0030"
+  dependencies:
+    draft-js-modifiers "~0.2.2"
+    immutable "~3.7.4"
+
 draft-js-list-depth-plugin@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/draft-js-list-depth-plugin/-/draft-js-list-depth-plugin-1.0.1.tgz#24a7d92d7fc42dfeeb36d20a57bd139272de5597"
+
+draft-js-markdown-shortcuts-plugin@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/draft-js-markdown-shortcuts-plugin/-/draft-js-markdown-shortcuts-plugin-0.5.0.tgz#f90ef984c8ac11f7a4e3092263ca2e81f49d6553"
+  dependencies:
+    decorate-component-with-props "^1.1.0"
+    draft-js "~0.10.5"
+    draft-js-checkable-list-item "^3.0.1"
+    immutable "~3.7.4"
+
+draft-js-modifiers@~0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/draft-js-modifiers/-/draft-js-modifiers-0.2.2.tgz#ff715450a04aea86b84993b0e51eea7c25a2591d"
+  dependencies:
+    draft-js "~0.10.5"
+    immutable "~3.7.4"
 
 draft-js-plugins-editor@^2.1.1:
   version "2.1.1"
@@ -4539,7 +4562,7 @@ draft-js-prism@^1.0.6:
     extend "^3.0.0"
     immutable "*"
 
-draft-js@^0.10.5:
+draft-js@^0.10.5, draft-js@~0.10.5:
   version "0.10.5"
   resolved "https://registry.yarnpkg.com/draft-js/-/draft-js-0.10.5.tgz#bfa9beb018fe0533dbb08d6675c371a6b08fa742"
   dependencies:

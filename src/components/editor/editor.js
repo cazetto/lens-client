@@ -3,13 +3,16 @@ import PropTypes from 'prop-types';
 import { EditorState, RichUtils, convertToRaw } from 'draft-js';
 import Editor from 'draft-js-plugins-editor';
 import createListDepthPlugin from 'draft-js-list-depth-plugin';
+import createMarkdownShortcutsPlugin from 'draft-js-markdown-shortcuts-plugin';
 import EditorControls from 'components/editor-controls';
 import { StyledEditor } from './editor.css';
 // import 'draft-js/dist/Draft.css';
 
 const listDepthPlugin = createListDepthPlugin();
+const markdownShortcutsPlugin = createMarkdownShortcutsPlugin();
+const plugins = [listDepthPlugin, markdownShortcutsPlugin];
 
-const plugins = [listDepthPlugin];
+import Prism from 'prismjs';
 
 const CustomEditor = props => {
   const editor = useRef(null);
