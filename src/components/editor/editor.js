@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Editor, EditorState, RichUtils, convertToRaw } from 'draft-js';
 import EditorControls from 'components/editor-controls';
 import { StyledEditor } from './editor.css';
-import 'draft-js/dist/Draft.css';
+// import 'draft-js/dist/Draft.css';
 
 const CustomEditor = props => {
   const editor = useRef(null);
@@ -24,7 +24,6 @@ const CustomEditor = props => {
     onChange(RichUtils.toggleInlineStyle(editorState, 'ITALIC'));
   const onBoldClick = () =>
     onChange(RichUtils.toggleInlineStyle(editorState, 'BOLD'));
-
   const onH1Click = () =>
     onChange(RichUtils.toggleBlockType(editorState, 'header-one'));
   const onH2Click = () =>

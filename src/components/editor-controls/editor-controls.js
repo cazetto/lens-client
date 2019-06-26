@@ -150,7 +150,7 @@ const EditorFormater = ({
         type="button"
         onClick={onOLClick}
       >
-        UL
+        OL
       </Button>
       <Button
         fontSize={15}
@@ -162,7 +162,7 @@ const EditorFormater = ({
         type="button"
         onClick={onULClick}
       >
-        OL
+        UL
       </Button>
       <Button
         fontSize={15}
