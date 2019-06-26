@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import { Box, Card, Heading, Text } from 'rebass';
+import { Box, Card, Text } from 'rebass';
 import { Container } from './search-list-item.css';
 
-const SearchListItem = ({ data: { title, description, content, slug } }) => (
+const SearchListItem = ({ data: { title, description, slug } }) => (
   <Container>
     <Link to={`/post/${slug}`}>
       <Card

@@ -17,7 +17,9 @@ const Nav = props => (
           {props.location.pathname !== '/create/post' && (
             <li>
               <Link to="/create/post">
-                <Button mt={-10} bg='#E91E63' variant='outline'>CREATE A POST</Button>
+                <Button mt={-10} bg="#E91E63" variant="outline">
+                  CREATE A POST
+                </Button>
               </Link>
             </li>
           )}
@@ -31,10 +33,18 @@ const Nav = props => (
   </Container>
 );
 
-const NavWithLocation = ({authenticated, me}) => {
+Nav.propTypes = {
+  authenticated: PropTypes.bool.isRequired,
+  me: PropTypes.object,
+  location: PropTypes.object.isRequired,
+};
+
+const NavWithLocation = ({ authenticated, me }) => {
   return (
     <Location>
-      {({ location }) => <Nav location={location} authenticated={authenticated} me={me}/>}
+      {({ location }) => (
+        <Nav location={location} authenticated={authenticated} me={me} />
+      )}
     </Location>
   );
 };

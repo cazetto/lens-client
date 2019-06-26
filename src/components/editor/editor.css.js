@@ -34,7 +34,7 @@ export const StyledEditor = styled.div`
     font-family: 'Hoefler Text', 'Georgia', serif;
     font-style: italic;
     color: #666;
-    border-left: 2px solid #1E88E5;
+    border-left: 2px solid #1e88e5;
     margin: 0 !important;
     padding: 10px;
     width: 20%;
@@ -42,9 +42,6 @@ export const StyledEditor = styled.div`
     margin: 16px 0;
     padding: 10px 20px;
   }
-
-
-
 
   /**
    * Copyright (c) Facebook, Inc. and its affiliates. All rights reserved.
@@ -59,7 +56,6 @@ export const StyledEditor = styled.div`
    * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
    * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    */
-
 
   .DraftEditor-editor .DraftEditor-blockquote {
     border-left: 5px solid #eee;
@@ -95,6 +91,4 @@ export const StyledEditor = styled.div`
   .DraftEditor-activeButton {
     color: #5890ff;
   }
-
-
 `;

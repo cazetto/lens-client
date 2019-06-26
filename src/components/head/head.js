@@ -32,7 +32,10 @@ const Head = ({
     <meta content={pageTitleFull} name="twitter:title" />
     <title>{pageTitleFull}</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/draft-js/0.10.5/Draft.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/draft-js/0.10.5/Draft.min.css"
+    />
 
     <meta content={siteDescription} name="description" />
     <meta content={siteDescription} property="og:description" />

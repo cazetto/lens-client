@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { navigate } from '@reach/router';
 import { Mutation } from 'react-apollo';
 import { POST_MUTATION } from './mutations';
-import { Text } from 'rebass';
 
-import Loading from 'components/loading';
-import { Redirect } from '@reach/router';
 import Layout from 'components/layout';
 import Box from 'components/box';
 
@@ -29,7 +25,7 @@ const PostCreate = () => {
 
   const submit = mutation => {
     const { title, description, content, slug, url } = formData;
-    if (title, description, content, slug, url) {
+    if ((title, description, content, slug, url)) {
       mutation();
     }
   };
