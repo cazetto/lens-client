@@ -1,9 +1,15 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { Editor, EditorState, RichUtils, convertToRaw } from 'draft-js';
+import { EditorState, RichUtils, convertToRaw } from 'draft-js';
+import Editor from 'draft-js-plugins-editor';
+import createListDepthPlugin from 'draft-js-list-depth-plugin';
 import EditorControls from 'components/editor-controls';
 import { StyledEditor } from './editor.css';
 // import 'draft-js/dist/Draft.css';
+
+const listDepthPlugin = createListDepthPlugin();
+
+const plugins = [listDepthPlugin];
 
 const CustomEditor = props => {
   const editor = useRef(null);
@@ -69,6 +75,7 @@ const CustomEditor = props => {
           ref={editor}
           placeholder="Write a story..."
           spellCheck={true}
+          plugins={plugins}
         />
       </div>
     </StyledEditor>

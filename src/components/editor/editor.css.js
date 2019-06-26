@@ -42,4 +42,24 @@ export const StyledEditor = styled.div`
     margin: 16px 0;
     padding: 10px 20px;
   }
+
+  ul {
+    li {
+      list-style-position: inside;
+      list-style-type: disc;
+    }
+  }
+
+  ol {
+    li {
+      list-style-type: decimal;
+      list-style-position: inside;
+    }
+  }
+
+  li {
+    div {
+      display: inline;
+    }
+  }
 `;

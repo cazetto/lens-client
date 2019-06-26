@@ -30,6 +30,8 @@
     "apollo-link-http": "^1.5.14",
     "babel-plugin-styled-components": "^1.10.0",
     "draft-js": "^0.10.5",
+    "draft-js-list-depth-plugin": "^1.0.1",
+    "draft-js-plugins-editor": "^2.1.1",
     "draft-js-prism": "^1.0.6",
     "gatsby": "^2.3.26",
     "gatsby-image": "^2.0.39",
