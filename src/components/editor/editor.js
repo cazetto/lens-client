@@ -5,6 +5,7 @@ import {
   RichUtils,
   convertToRaw,
   AtomicBlockUtils,
+  convertFromRaw,
 } from 'draft-js';
 import Editor, { composeDecorators } from 'draft-js-plugins-editor';
 import createListDepthPlugin from 'draft-js-list-depth-plugin';
@@ -146,4 +147,26 @@ CustomEditor.propTypes = {
   onChange: PropTypes.func.isRequired,
 };
 
+// Viewer
+const EditorContentViewer = ({ content }) => {
+  const contentState = convertFromRaw(JSON.parse(content));
+  const editorState = EditorState.createWithContent(contentState);
+  return (
+    <StyledEditor>
+      <div className="editor">
+        <Editor
+          editorState={editorState}
+          plugins={plugins}
+          onChange={() => {}}
+        />
+      </div>
+    </StyledEditor>
+  );
+};
+
+EditorContentViewer.propTypes = {
+  content: PropTypes.string.isRequired,
+};
+
 export default CustomEditor;
+export { EditorContentViewer };
