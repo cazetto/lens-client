@@ -2,6 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'rebass';
 import { StyledEditorControls } from './editor-controls.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faImage,
+  faCode,
+  faList,
+  faListOl,
+  faQuoteRight,
+  faBold,
+  faItalic,
+  faUnderline,
+} from '@fortawesome/free-solid-svg-icons';
 
 const EditorFormater = ({
   onUnderlineClick,
@@ -17,6 +28,7 @@ const EditorFormater = ({
   onOLClick,
   onULClick,
   onCodeBlockClick,
+  onAddImageClick,
 }) => {
   return (
     <StyledEditorControls>
@@ -30,7 +42,7 @@ const EditorFormater = ({
         type="button"
         onClick={onUnderlineClick}
       >
-        <u>U</u>
+        <FontAwesomeIcon icon={faUnderline} />
       </Button>
       <Button
         fontSize={15}
@@ -42,7 +54,7 @@ const EditorFormater = ({
         type="button"
         onClick={onItalicClick}
       >
-        <i>I</i>
+        <FontAwesomeIcon icon={faItalic} />
       </Button>
       <Button
         fontSize={15}
@@ -54,7 +66,7 @@ const EditorFormater = ({
         type="button"
         onClick={onBoldClick}
       >
-        B
+        <FontAwesomeIcon icon={faBold} />
       </Button>
       <Button
         fontSize={15}
@@ -66,7 +78,7 @@ const EditorFormater = ({
         type="button"
         onClick={onH1Click}
       >
-        H1
+        <b>H1</b>
       </Button>
       <Button
         fontSize={15}
@@ -78,7 +90,7 @@ const EditorFormater = ({
         type="button"
         onClick={onH2Click}
       >
-        H2
+        <b>H2</b>
       </Button>
       <Button
         fontSize={15}
@@ -90,7 +102,7 @@ const EditorFormater = ({
         type="button"
         onClick={onH3Click}
       >
-        H3
+        <b>H3</b>
       </Button>
       <Button
         fontSize={15}
@@ -102,7 +114,7 @@ const EditorFormater = ({
         type="button"
         onClick={onH4Click}
       >
-        H4
+        <b>H4</b>
       </Button>
       <Button
         fontSize={15}
@@ -114,7 +126,7 @@ const EditorFormater = ({
         type="button"
         onClick={onH5Click}
       >
-        H5
+        <b>H5</b>
       </Button>
       <Button
         fontSize={15}
@@ -126,7 +138,7 @@ const EditorFormater = ({
         type="button"
         onClick={onH6Click}
       >
-        H6
+        <b>H6</b>
       </Button>
       <Button
         fontSize={15}
@@ -138,7 +150,7 @@ const EditorFormater = ({
         type="button"
         onClick={onBlockquoteClick}
       >
-        Blockquote
+        <FontAwesomeIcon icon={faQuoteRight} />
       </Button>
       <Button
         fontSize={15}
@@ -150,7 +162,7 @@ const EditorFormater = ({
         type="button"
         onClick={onOLClick}
       >
-        OL
+        <FontAwesomeIcon icon={faListOl} />
       </Button>
       <Button
         fontSize={15}
@@ -162,7 +174,7 @@ const EditorFormater = ({
         type="button"
         onClick={onULClick}
       >
-        UL
+        <FontAwesomeIcon icon={faList} />
       </Button>
       <Button
         fontSize={15}
@@ -174,7 +186,19 @@ const EditorFormater = ({
         type="button"
         onClick={onCodeBlockClick}
       >
-        Code
+        <FontAwesomeIcon icon={faCode} />
+      </Button>
+      <Button
+        fontSize={15}
+        px={2}
+        py={1}
+        m={1.9}
+        fontWeight={400}
+        bg="#455A64"
+        type="button"
+        onClick={onAddImageClick}
+      >
+        <FontAwesomeIcon icon={faImage} />
       </Button>
     </StyledEditorControls>
   );
@@ -194,6 +218,7 @@ EditorFormater.propTypes = {
   onULClick: PropTypes.func.isRequired,
   onOLClick: PropTypes.func.isRequired,
   onCodeBlockClick: PropTypes.func.isRequired,
+  onAddImageClick: PropTypes.func.isRequired,
 };
 
 export default EditorFormater;

@@ -1,18 +1,50 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { EditorState, RichUtils, convertToRaw } from 'draft-js';
-import Editor from 'draft-js-plugins-editor';
+import {
+  EditorState,
+  RichUtils,
+  convertToRaw,
+  AtomicBlockUtils,
+} from 'draft-js';
+import Editor, { composeDecorators } from 'draft-js-plugins-editor';
 import createListDepthPlugin from 'draft-js-list-depth-plugin';
 import createMarkdownShortcutsPlugin from 'draft-js-markdown-shortcuts-plugin';
 import EditorControls from 'components/editor-controls';
 import { StyledEditor } from './editor.css';
 // import 'draft-js/dist/Draft.css';
 
+import createImagePlugin from 'draft-js-image-plugin';
+import createAlignmentPlugin from 'draft-js-alignment-plugin';
+import createFocusPlugin from 'draft-js-focus-plugin';
+import createResizeablePlugin from 'draft-js-resizeable-plugin';
+import createBlockDndPlugin from 'draft-js-drag-n-drop-plugin';
+
+const focusPlugin = createFocusPlugin();
+const resizeablePlugin = createResizeablePlugin();
+const blockDndPlugin = createBlockDndPlugin();
+const alignmentPlugin = createAlignmentPlugin();
+
+const decorator = composeDecorators(
+  resizeablePlugin.decorator,
+  alignmentPlugin.decorator,
+  focusPlugin.decorator,
+  blockDndPlugin.decorator
+);
+
+const imagePlugin = createImagePlugin({ decorator });
 const listDepthPlugin = createListDepthPlugin();
 const markdownShortcutsPlugin = createMarkdownShortcutsPlugin();
-const plugins = [listDepthPlugin, markdownShortcutsPlugin];
-
-import Prism from 'prismjs';
+const resizePlugin = createResizeablePlugin();
+const plugins = [
+  listDepthPlugin,
+  markdownShortcutsPlugin,
+  imagePlugin,
+  blockDndPlugin,
+  focusPlugin,
+  alignmentPlugin,
+  resizeablePlugin,
+  resizePlugin,
+];
 
 const CustomEditor = props => {
   const editor = useRef(null);
@@ -54,6 +86,30 @@ const CustomEditor = props => {
   const onBlockquoteClick = () =>
     onChange(RichUtils.toggleBlockType(editorState, 'blockquote'));
 
+  const onAddImageClick = event => {
+    event.preventDefault();
+    const urlValue = window.prompt('Paste Image Link');
+    if (!urlValue) return;
+    const contentState = editorState.getCurrentContent();
+    const contentStateWithEntity = contentState.createEntity(
+      'image',
+      'IMMUTABLE',
+      { src: urlValue }
+    );
+    const entityKey = contentStateWithEntity.getLastCreatedEntityKey();
+    const newEditorState = EditorState.set(
+      editorState,
+      { currentContent: contentStateWithEntity },
+      'create-entity'
+    );
+    const finalEditorState = AtomicBlockUtils.insertAtomicBlock(
+      newEditorState,
+      entityKey,
+      ' '
+    );
+    setEditorState(finalEditorState);
+  };
+
   return (
     <StyledEditor>
       <EditorControls
@@ -70,6 +126,7 @@ const CustomEditor = props => {
         onULClick={onULClick}
         onOLClick={onOLClick}
         onCodeBlockClick={onCodeBlockClick}
+        onAddImageClick={onAddImageClick}
       />
       <div className="editor">
         <Editor

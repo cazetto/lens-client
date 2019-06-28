@@ -11,8 +11,8 @@ const CreatePostForm = ({ onChange, onSubmit, loading, error }) => {
     [title, setTitle],
     [description, setDescription],
     [content, setContent],
-    [slug],
-    [url],
+    [slug, setSlug],
+    [url, setUrl],
   ] = [useState(''), useState(''), useState(''), useState(''), useState('')];
 
   const changeField = (value, setField) => {
@@ -42,6 +42,22 @@ const CreatePostForm = ({ onChange, onSubmit, loading, error }) => {
           value={description}
           onChange={event => changeField(event.target.value, setDescription)}
         />
+
+        <Input
+          type="text"
+          placeholder="Url"
+          required={true}
+          value={url}
+          onChange={event => changeField(event.target.value, setUrl)}
+        />
+        <Input
+          type="text"
+          placeholder="Slug"
+          required={true}
+          value={slug}
+          onChange={event => changeField(event.target.value, setSlug)}
+        />
+
         <Editor onChange={content => changeField(content, setContent)} />
 
         <Button type="submit" onClick={event => handleClick(event)}>

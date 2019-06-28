@@ -8,7 +8,7 @@ export const StyledEditorControls = styled.div`
     outline: none;
   }
 
-  i {
-    font-style: italic;
+  b {
+    font-weight: 700;
   }
 `;
