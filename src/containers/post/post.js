@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Query } from 'react-apollo';
+import { EditorContentViewer } from 'components/editor';
+import 'draft-js/dist/Draft.css';
 import { POST_QUERY } from './queries';
 import Loading from 'components/loading';
 import { Redirect } from '@reach/router';
@@ -26,7 +28,7 @@ const Post = props => {
                 <p>Id {id}</p>
                 <p>Title {title}</p>
                 <p>Description {description}</p>
-                <p>Content {content}</p>
+                {content && <EditorContentViewer content={content} />}
               </div>
             );
           }}

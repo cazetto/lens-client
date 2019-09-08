@@ -21,9 +21,15 @@ exports.onCreateWebpackConfig = ({
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
   const post = path.resolve('src/containers/post/post.js');
+  const postCreate = path.resolve('src/containers/post/create.js');
 
   createPage({
     path: '/post/:id',
     component: post,
+  });
+
+  createPage({
+    path: '/create/post',
+    component: postCreate,
   });
 }

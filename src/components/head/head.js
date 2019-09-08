@@ -20,6 +20,7 @@ const Head = ({
   <Helmet>
     <html lang="en" />
 
+    <meta charset="utf-8" />
     <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
     <meta
       content="width=device-width,initial-scale=1.0,user-scalable=yes"
@@ -30,6 +31,11 @@ const Head = ({
     <meta content={pageTitleFull} property="og:title" />
     <meta content={pageTitleFull} name="twitter:title" />
     <title>{pageTitleFull}</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/draft-js/0.10.5/Draft.min.css"
+    />
 
     <meta content={siteDescription} name="description" />
     <meta content={siteDescription} property="og:description" />
